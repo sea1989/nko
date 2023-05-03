@@ -1,0 +1,14 @@
+.header-logo {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    color: #fff;
+
+    min-width: 260px;
+
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+
+    text-decoration: none;
+}

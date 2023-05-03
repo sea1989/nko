@@ -1,0 +1,15 @@
+.navbar {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin: 0 10px;
+}
+
+.navbar__item {
+    min-width: fit-content;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 120%;
+}

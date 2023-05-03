@@ -1,0 +1,11 @@
+.promo__link {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 120%;
+    /* identical to box height, or 22px */
+
+    text-decoration-line: underline;
+
+    color: #FFFFFF;
+}
