@@ -1,14 +1,10 @@
-
 import Typography from '@mui/material/Typography';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
 import { CardActionArea } from '@mui/material';
 import Box from '@mui/material/Box';
 
 import SouthEastOutlinedIcon from '@mui/icons-material/SouthEastOutlined';
-
-import News1 from '../../assets/images/news1.png';
 
 import './CardNewsText.css';
 

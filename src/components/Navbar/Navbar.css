@@ -12,4 +12,10 @@
     font-weight: 400;
     font-size: 18px;
     line-height: 120%;
+    color: white;
+    text-decoration: none;
+}
+
+.navbar__item:hover {
+    color: #F578B3;
 }

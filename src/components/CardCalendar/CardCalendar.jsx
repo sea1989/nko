@@ -1,34 +1,31 @@
-
 import Typography from '@mui/material/Typography';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import { CardActionArea } from '@mui/material';
 
-import Cat1 from '../../assets/images/cat1.png';
+import './CardCalendar.css';
+import { Link } from 'react-router-dom';
 
-import './CardCategories.css';
-
-export const CardCategories = () => {
+export const CardCalendar = () => {
 
   return (
 
     <Card sx={{
-      m: '5px',
-      background:'#F7F7F7'
-    }} >
-      <CardActionArea >
+      background: ' #FFE4C5'
+    }}>
+      <CardActionArea>
 
         <CardContent >
-          <img src={Cat1} alt='category' />
-
-          <Typography gutterBottom variant="h6" component="div">
-            Молодежные организации
-          </Typography>
-
           <Typography variant="subtitle1" color="#686868">
-            93
+            02 МАРТА 2023
+          </Typography>
+          <Typography gutterBottom variant="h6" component="div">
+            Событие 1
           </Typography>
 
+          <Link className='link__more' >
+            Подробнее →
+          </Link>
         </CardContent>
 
       </CardActionArea>

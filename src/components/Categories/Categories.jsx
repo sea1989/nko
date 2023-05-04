@@ -1,5 +1,3 @@
-import { Link } from 'react-router-dom';
-
 import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
@@ -12,12 +10,9 @@ import { Pagination, Navigation } from "swiper";
 
 import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
-import Grid from '@mui/material/Grid';
-
 import Container from '@mui/material/Container';
 
 import './Categories.css';
-import { CardNewsText } from '../CardNewsText';
 import { CardCategories } from '../CardCategories/CardCategories';
 
 
@@ -25,12 +20,12 @@ export const Categories = () => {
 
   return (
 
-    <Paper square
+    <Paper square elevation={0}
       sx={{
         position: 'relative',
         backgroundColor: '#fff',
         color: '#000',
-        pt: '80px',
+     
         pb: '80px',
         backgroundSize: 'cover',
         backgroundRepeat: 'no-repeat',
@@ -97,12 +92,7 @@ export const Categories = () => {
             <CardCategories />
           </SwiperSlide>
 
-          <SwiperSlide>
-            <CardCategories />
-          </SwiperSlide>
-
         </Swiper>
-
 
       </Container>
     </Paper>

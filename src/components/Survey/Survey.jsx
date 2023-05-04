@@ -3,12 +3,11 @@ import Typography from '@mui/material/Typography';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 
-import { CardActionArea, CardHeader, Button } from '@mui/material';
+import { CardHeader, Button } from '@mui/material';
 import Radio from '@mui/material/Radio';
 import RadioGroup from '@mui/material/RadioGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import FormControl from '@mui/material/FormControl';
-import FormLabel from '@mui/material/FormLabel';
 
 import './Survey.css';
 import { Link } from 'react-router-dom';
@@ -52,7 +51,7 @@ export const Survey = () => {
 
         </FormControl>
 
-        <Link>Узнать результаты</Link>
+        <Link className='link__survey'>Результаты</Link>
 
       </CardContent>
 

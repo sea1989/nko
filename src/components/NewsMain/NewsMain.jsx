@@ -15,7 +15,7 @@ export const NewsMain = () => {
 
   return (
 
-    <Paper square
+    <Paper square elevation={0}
       sx={{
         position: 'relative',
         backgroundColor: '#fff',
@@ -66,8 +66,6 @@ export const NewsMain = () => {
           <Grid item xs={12} md={3}>
             <Survey />
           </Grid>
-
-
         </Grid>
 
 

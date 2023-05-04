@@ -1,0 +1,38 @@
+ul.breadcrumb {
+    display: flex;
+    list-style: none;
+
+    margin-bottom: 38px;
+
+    row-gap: 20px;
+    flex-wrap: wrap;
+}
+
+.breadcrumb__item {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    color: var(--black);
+}
+
+.breadcrumb__item__active {
+    color: var(--blue);
+}
+
+ul.breadcrumb li + li:before {
+    padding: 8px;
+    color: black;
+    content: "―";
+}
+
+/* Добавить цвет на наведении курсора мыши */
+ul.breadcrumb li a:hover {
+    color: #01447e;
+    text-decoration: underline;
+}
+
+@media (max-width: 1120px) {
+
+}

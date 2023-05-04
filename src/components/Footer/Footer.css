@@ -1,0 +1,10 @@
+.link__footer {
+    display: flex;
+    text-decoration: none;
+    color: white;
+    padding-bottom: 10px;
+}
+
+.link__footer:hover {
+    color: #F578B3;
+}
