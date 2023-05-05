@@ -17,7 +17,6 @@ export const AboutPage = () => {
 
   const projectsList = [
     { id: 1, link: '/', title: 'Главная' },
-    { id: 1, link: '/', title: 'Собрание депутатов' },
   ];
 
   const currentPage = 'Нормативные правовые акты';
@@ -27,13 +26,6 @@ export const AboutPage = () => {
       <Container>
 
         <Breadcrumb list={projectsList} currentPage={currentPage} />
-
-        {/* <Breadcrumbs sx={{ pt: '60px' }} separator="-" aria-label="breadcrumb">
-          <Link className='link__more' underline="hover" color="inherit" to={'/'}>
-            О портале
-          </Link>
-          <Typography color="primary.rose">Breadcrumbs</Typography>
-        </Breadcrumbs> */}
 
         <Paper square elevation={0}
           sx={{

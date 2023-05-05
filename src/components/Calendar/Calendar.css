@@ -1,17 +1,17 @@
-.MuiPickersCalendarHeader-root {
-    background: #4478FF;
-    border: 1px solid #4478FF;
-    border-radius: 10px 10px 0px 0px;
-    margin: 0 !important;
-    max-height: 60px !important;
-}
+ .MuiPickersCalendarHeader-root {
+     background: #4478FF;
+     border: 1px solid #4478FF;
+     border-radius: 10px 10px 0px 0px;
+     margin: 0 !important;
+     max-height: 60px !important;
+ }
 
-.MuiDateCalendar-root {
-    background: #F7F7F7;
-    border-radius: 10px;
+ .MuiDateCalendar-root {
+     background: #F7F7F7;
+     border-radius: 10px;
 
-}
+ }
 
-.MuiPickersSlideTransition-root {
-    min-height: fit-content !important;
-}
+ .MuiPickersSlideTransition-root {
+     min-height: 200px;
+ }

@@ -36,7 +36,7 @@ function DrawerAppBar(props) {
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
       <Typography variant="h6" sx={{ my: 2 }}>
-      Портал НКО Ресурс
+        Портал НКО Ресурс
       </Typography>
       <Divider />
       <List>
@@ -59,7 +59,7 @@ function DrawerAppBar(props) {
 
       <AppBar position="static">
         <Container >
-          <Toolbar>
+          <Toolbar disableGutters sx={{ justifyContent: 'space-between' }}>
             <IconButton
               color="inherit"
               aria-label="open drawer"
@@ -96,7 +96,7 @@ function DrawerAppBar(props) {
             keepMounted: true, // Better open performance on mobile.
           }}
           sx={{
-            display: { xs: 'block', sm: 'block', md:'none' },
+            display: { xs: 'block', sm: 'block', md: 'none' },
             '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
           }}
         >

@@ -5,7 +5,7 @@ const navList = [
     { id: 1, link: '/', title: 'Главная' },
     { id: 2, link: '/about', title: 'О каталоге' },
     { id: 3, link: '/support', title: 'Поддержка' },
-    { id: 4, link: '/public_projects', title: 'Общественные проекты' },
+    { id: 4, link: '/social', title: 'Общественные проекты' },
     { id: 5, link: '/contacts', title: 'Контакты' },
 ];
 

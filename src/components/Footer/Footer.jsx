@@ -59,7 +59,7 @@ export const Footer = () => {
               mb: 2,
             }} />
 
-            <Link className='link__footer'>
+            <Link to='/rules' className='link__footer'>
               Правила
             </Link>
             <Link className='link__footer'>
