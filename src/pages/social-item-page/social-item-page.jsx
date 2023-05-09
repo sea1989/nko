@@ -1,5 +1,17 @@
 import React, { useState } from 'react';
-import './social-page.css';
+import { useSelector } from 'react-redux';
+
+import { Swiper, SwiperSlide } from "swiper/react";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+
+// import required modules
+import { Navigation, Pagination } from "swiper";
+
+import './social-item-page.css';
 
 import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
@@ -7,22 +19,19 @@ import Grid from '@mui/material/Grid';
 import { Link } from 'react-router-dom';
 import Container from '@mui/material/Container';
 
-import { CardNews } from '../../components/CardNews/CardNews';
-import { CardNewsText } from '../../components/CardNewsText';
+import { Survey } from '../../components/Survey';
 import { Breadcrumb } from '../../components/Breadcrumb/Breadcrumb';
-import { Box, Button } from '@mui/material';
+import { CardNews } from '../../components/CardNews/CardNews';
 import { CardSocial } from '../../components/CardSocial/CardSocial';
 
 import Social1 from '../../assets/images/social1.jpg';
 import Social2 from '../../assets/images/social2.jpg';
 import SocialImg1 from '../../assets/images/social-img1.jpg'
 
-export const SocialPage = () => {
 
-  const projectsList = [
-    { id: 1, link: '/', title: 'Главная' },
-  ];
-  const currentPage = 'Общественные проекты';
+export const SocialItemPage = () => {
+
+  const project = useSelector(state => state.project.currentProject);
 
   const [projects, setProjects] = useState([
     {
@@ -63,11 +72,16 @@ export const SocialPage = () => {
     }
   ]);
 
+  const projectsList = [
+    { id: 1, link: '/', title: 'Главная' },
+    { id: 2, link: '/social', title: 'Общественные проекты' },
+  ];
+
   return (
     <main>
       <Container>
 
-        <Breadcrumb list={projectsList} currentPage={currentPage} />
+        <Breadcrumb list={projectsList} currentPage={project?.title} />
 
         <Paper square elevation={0}
           sx={{
@@ -82,74 +96,95 @@ export const SocialPage = () => {
           }}
         >
 
-          <Box
-            sx={{ flexDirection: { xs: 'column', sm: 'row' } }}
-            gap={2}
-            display={'flex'} justifyContent={'space-between'} spacing={4}>
+          <Grid container spacing={4}>
+            <Grid item xs={12} md={9}>
 
-            <Typography variant="h4" component="h">
-              Общественные проекты
-            </Typography>
+              <Typography mb={2} variant="h4" component="h">
+                {project?.title}
+              </Typography>
 
-            <Button variant='contained' color='rose'>голосовать за проект</Button>
+              <Typography variant="subtitle1" color="#686868">
+                {project?.date}
+              </Typography>
 
-          </Box>
+              <Swiper navigation={true} pagination={true} modules={[Pagination, Navigation]} className="swiper__social">
+                {project?.gallery.map((item) =>
+                  <SwiperSlide>
+                    <img src={item} alt='img' />
+                  </SwiperSlide>
+                )}
+              </Swiper>
 
-          <Grid mt={2} container spacing={4}>
+              <Typography py={2} variant='body1' component='p'>
+                {project?.text}
+              </Typography>
 
-            {projects.map((item) => (
-              <Grid item xs={12} lg={6}>
-                <CardSocial project={item} />
-              </Grid>
-            ))}
 
+            </Grid>
+
+            <Grid item xs={12} md={3}>
+              <Survey />
+            </Grid>
           </Grid>
+
 
 
         </Paper>
 
+        <Paper square elevation={0}
+          sx={{
+            position: 'relative',
+            backgroundColor: '#fff',
+            color: '#000',
+
+            pb: '80px',
+            backgroundSize: 'cover',
+            backgroundRepeat: 'no-repeat',
+            backgroundPosition: 'center',
+          }}
+        >
+
+          <Typography mb={2} variant="h4" component="h2">
+            Другие проекты
+          </Typography>
+
+          <Swiper
+            slidesPerView={2}
+            spaceBetween={20}
+            slidesPerGroup={1}
+            breakpoints={{
+              // when window width is >= 640px
+              0: {
+                slidesPerView: 1,
+              },
+
+              1024: {
+                slidesPerView: 2,
+              },
+
+            }}
+            loop={true}
+            loopFillGroupWithBlank={true}
+            pagination={false}
+            navigation={true}
+            modules={[Pagination, Navigation]}
+            className="mySwiper"
+          >
+
+            <Grid container >
+              {projects.map((item) => (
+                <Grid item xs={12} md={6}>
+                  <SwiperSlide>
+                    <CardSocial project={item} />
+                  </SwiperSlide>
+                </Grid>
+
+              ))}
+
+            </Grid>
+          </Swiper>
+        </Paper>
       </Container>
-
-      <Paper square elevation={0}
-        sx={{
-          position: 'relative',
-          backgroundColor: '#fff',
-          color: '#000',
-          pt: '0px',
-          pb: '80px',
-          backgroundSize: 'cover',
-          backgroundRepeat: 'no-repeat',
-          backgroundPosition: 'center',
-        }}
-      >
-
-        <Container>
-
-          <Grid container display={'flex'} justifyContent={'space-between'}>
-            <Typography mb={2} variant="h4" component="h2">
-              Новости
-            </Typography>
-
-            <Link className='link__all'>Все новости →</Link>
-          </Grid>
-
-          <Grid container spacing={4}>
-            <Grid item xs={12} md={3}>
-              <CardNews />
-            </Grid>
-            <Grid item xs={12} md={3}>
-              <CardNewsText />
-            </Grid>
-            <Grid item xs={12} md={3}>
-              <CardNews />
-            </Grid>
-            <Grid item xs={12} md={3}>
-              <CardNewsText />
-            </Grid>
-          </Grid>
-
-        </Container>
-      </Paper>
 
     </main>
   );

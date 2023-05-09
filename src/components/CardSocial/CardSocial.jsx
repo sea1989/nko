@@ -20,12 +20,12 @@ export const CardSocial = ({ project }) => {
 
   const handleClick = () => {
     dispatch(setCurrentProject(project));
-    navigate('/card-details');
+    navigate(`/social-details/${project.id}`);
   }
 
   return (
 
-    <Card >
+    <Card s>
       <CardActionArea onClick={handleClick}>
 
         <Box

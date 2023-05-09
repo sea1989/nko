@@ -41,8 +41,6 @@ export const RulesPage = () => {
           }}
         >
 
-
-
           <Grid container spacing={4}>
             <Grid item xs={12} md={9}>
 

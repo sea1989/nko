@@ -16,6 +16,8 @@ import { AboutPage } from './pages/about-page';
 import { SupportPage } from './pages/support-page/support-page';
 import { RulesPage } from './pages/rules-page/rules-page';
 import { SocialPage } from './pages/social-page/social-page';
+import { SocialItemPage } from './pages/social-item-page/social-item-page';
+import { ContactsPage } from './pages/contacts-page';
 
 const theme = createTheme({
   typography: {
@@ -54,6 +56,8 @@ function App() {
             <Route exact path="/support" element={<SupportPage />} />
             <Route exact path="/rules" element={<RulesPage />} />
             <Route exact path="/social" element={<SocialPage />} />
+            <Route exact path="/social-details/:id" element={<SocialItemPage />} />
+            <Route exact path="/contacts" element={<ContactsPage />} />
           </Routes>
           <Footer />
         </ThemeProvider>
