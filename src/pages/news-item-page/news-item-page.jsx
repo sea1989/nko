@@ -11,7 +11,7 @@ import "swiper/css/navigation";
 // import required modules
 import { Navigation, Pagination } from "swiper";
 
-import './social-item-page.css';
+import './news-item-page.css';
 
 import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
@@ -29,7 +29,7 @@ import Social2 from '../../assets/images/social2.jpg';
 import SocialImg1 from '../../assets/images/social-img1.jpg'
 
 
-export const SocialItemPage = () => {
+export const NewsItemPage = () => {
 
   const project = useSelector(state => state.project.currentProject);
 
@@ -74,7 +74,7 @@ export const SocialItemPage = () => {
 
   const projectsList = [
     { id: 1, link: '/', title: 'Главная' },
-    { id: 2, link: '/social', title: 'Общественные проекты' },
+    { id: 2, link: '/news', title: 'Новости' },
   ];
 
   return (

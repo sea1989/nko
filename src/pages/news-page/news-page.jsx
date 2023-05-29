@@ -19,8 +19,6 @@ import { CardNews } from '../../components/CardNews/CardNews';
 import { Breadcrumb } from '../../components/Breadcrumb/Breadcrumb';
 
 import News1 from '../../assets/images/news1.png';
-import Social1 from '../../assets/images/social1.jpg';
-import Social2 from '../../assets/images/social2.jpg';
 import SocialImg1 from '../../assets/images/social-img1.jpg'
 
 
@@ -183,32 +181,35 @@ export const NewsPage = () => {
                 </TabPanel>
                 <TabPanel value={value} index={1}>
                   <Grid pb={2} container spacing={4}>
-                    <Grid item xs={12} md={4}>
-                      <CardNews />
-                    </Grid>
-                    <Grid item xs={12} md={4}>
-                      <CardNewsText />
-                    </Grid>
+                    {news.map((item, i) => {
+                      if (i % 2 === 0) {
+                        return <Grid key={item.id} item xs={12} md={4}>
+                          <CardNews props={item} />
+                        </Grid>
+                      } else {
+                        return <Grid key={item.id} item xs={12} md={4}>
+                          <CardNewsText props={item} />
+                        </Grid>
+                      }
+                    }
+                    )}
                   </Grid>
                   <Button color='rose' variant='contained'>ПОКАЗАТЬ ЕЩЕ</Button>
                 </TabPanel>
                 <TabPanel value={value} index={2}>
                   <Grid pb={2} container spacing={4}>
-                    <Grid item xs={12} md={4}>
-                      <CardNews />
-                    </Grid>
-                    <Grid item xs={12} md={4}>
-                      <CardNewsText />
-                    </Grid>
-                    <Grid item xs={12} md={4}>
-                      <CardNews />
-                    </Grid>
-                    <Grid item xs={12} md={4}>
-                      <CardNewsText />
-                    </Grid>
-                    <Grid item xs={12} md={4}>
-                      <CardNews />
-                    </Grid>
+                    {news.map((item, i) => {
+                      if (i % 2 === 0) {
+                        return <Grid key={item.id} item xs={12} md={4}>
+                          <CardNews props={item} />
+                        </Grid>
+                      } else {
+                        return <Grid key={item.id} item xs={12} md={4}>
+                          <CardNewsText props={item} />
+                        </Grid>
+                      }
+                    }
+                    )}
                   </Grid>
                   <Button color='rose' variant='contained'>ПОКАЗАТЬ ЕЩЕ</Button>
                 </TabPanel>

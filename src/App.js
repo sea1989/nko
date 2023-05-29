@@ -22,6 +22,7 @@ import { LoginPage } from './pages/login/login';
 import { RegisterPage } from './pages/register-page/register-page';
 import { AdvancedSearchPage } from './pages/advanced-search-page/advanced-search-page';
 import { NewsPage } from './pages/news-page/news-page';
+import { NewsItemPage } from './pages/news-item-page/news-item-page';
 
 const theme = createTheme({
   typography: {
@@ -66,7 +67,7 @@ function App() {
             <Route exact path="/register" element={<RegisterPage />} />
             <Route exact path="/advanced_search" element={<AdvancedSearchPage />} />
             <Route exact path="/news" element={<NewsPage />} />
-            <Route exact path="/news-details/:id" element={<NewsPage />} />
+            <Route exact path="/news-details/:id" element={<NewsItemPage />} />
           </Routes>
           <Footer />
         </ThemeProvider>
