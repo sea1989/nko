@@ -4,17 +4,14 @@ import Typography from '@mui/material/Typography';
 
 import './Breadcrumb.css';
 
-
-
 export const Breadcrumb = ({ list, currentPage }) => {
-
 
   return (
 
     <Breadcrumbs sx={{ pt: '60px' }} separator="-" aria-label="breadcrumb">
 
       {list.map((item) => (
-        <Link className='link__more' to={item.link}>
+        <Link key={item.id} className='link__more' to={item.link}>
           {item.title}
         </Link>
       ))}

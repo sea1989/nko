@@ -14,10 +14,10 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
-import Link from '@mui/material/Link';
 import Container from '@mui/material/Container';
 import { Logo } from './Logo/Logo';
 import { Navbar } from './Navbar/Navbar';
+import { Link } from 'react-router-dom';
 
 const navItems = ['Главная', 'О каталоге', 'Поддержка', 'Общественные проекты', 'Контакты'];
 
@@ -76,7 +76,7 @@ function DrawerAppBar(props) {
 
 
             <Box sx={{ display: { xs: 'none', sm: 'none', md: 'flex' }, }} display={'flex'} alignItems={'center'} gap={1}>
-              <Link sx={{ color: '#fff' }} href="#" underline='secondary'>
+              <Link className='link__nav' to='/register' sx={{ color: '#fff' }} href="#" underline='secondary'>
                 Регистрация
               </Link>
               <Button color='rose' variant="contained">Вход</Button>
@@ -109,7 +109,6 @@ function DrawerAppBar(props) {
 }
 
 DrawerAppBar.propTypes = {
-
   window: PropTypes.func,
 };
 

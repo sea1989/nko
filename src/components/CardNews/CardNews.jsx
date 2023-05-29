@@ -6,30 +6,41 @@ import CardMedia from '@mui/material/CardMedia';
 import { CardActionArea } from '@mui/material';
 import Box from '@mui/material/Box';
 
+import { useDispatch, useSelector } from 'react-redux';
+import { setCurrentNews } from '../../redux/news/reducer';
+import { useNavigate } from 'react-router-dom';
+
 import SouthEastOutlinedIcon from '@mui/icons-material/SouthEastOutlined';
 
 import News1 from '../../assets/images/news1.png';
 
 import './CardNews.css';
 
-export const CardNews = () => {
+export const CardNews = ({ props }) => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    dispatch(setCurrentNews(props));
+    navigate(`/news-details/${props.id}`);
+  }
 
   return (
 
-    <Card >
-      <CardActionArea >
+    <Card>
+      <CardActionArea onClick={handleClick} >
         <CardMedia
           component="img"
           height="180"
-          src={News1}
-          alt="green iguana"
+          src={props.img}
+          alt={props.alt}
         />
         <CardContent >
           <Typography variant="subtitle1" color="#686868">
-            02 МАРТА 2023
+            {props.date}
           </Typography>
           <Typography gutterBottom variant="h6" component="div">
-            Опрос
+            {props.title}
           </Typography>
           <Box textAlign={'end'}>
             <SouthEastOutlinedIcon color='primary' />
@@ -37,7 +48,6 @@ export const CardNews = () => {
         </CardContent>
       </CardActionArea>
     </Card>
-
   );
 };
 

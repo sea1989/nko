@@ -1,10 +1,9 @@
-
+import React, { useState } from 'react';
 import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
 import { Link } from 'react-router-dom';
 import Container from '@mui/material/Container';
-
 
 import './NewsMain.css';
 import { CardNews } from '../CardNews/CardNews';
@@ -34,7 +33,7 @@ export const NewsMain = () => {
             Новости
           </Typography>
 
-          <Link className='link__all'>Все новости →</Link>
+          <Link to='/news' className='link__all'>Все новости →</Link>
         </Grid>
 
         <Grid container spacing={4}>

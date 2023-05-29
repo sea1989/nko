@@ -16,9 +16,9 @@ import { CardSocial } from '../../components/CardSocial/CardSocial';
 import Social1 from '../../assets/images/social1.jpg';
 import Social2 from '../../assets/images/social2.jpg';
 import SocialImg1 from '../../assets/images/social-img1.jpg'
+import News1 from '../../assets/images/news1.png';
 
 export const SocialPage = () => {
-
   const projectsList = [
     { id: 1, link: '/', title: 'Главная' },
   ];
@@ -63,6 +63,45 @@ export const SocialPage = () => {
     }
   ]);
 
+  const [news, setNews] = useState([
+    {
+      id: 1,
+      img: News1,
+      gallery: [SocialImg1, SocialImg1, SocialImg1],
+      alt: 'test',
+      title: 'Опрос',
+      date: '02 МАРТА 2023',
+      text: 'Торжественное мероприятие, посвященное Всемирному Дню НКО, прошло в г.Южно - Сахалинске.27 февраля 2023 года в ДК Родина г.Южно - Сахалинска состоялось торжественное мероприятие,???? посвященное Всемирному Дню НКО.На праздник съехались представители...',
+    },
+    {
+      id: 2,
+      img: News1,
+      gallery: [SocialImg1, SocialImg1, SocialImg1],
+      alt: 'test',
+      title: 'Опрос',
+      date: '02 МАРТА 2023',
+      text: 'Торжественное мероприятие, посвященное Всемирному Дню НКО, прошло в г.Южно - Сахалинске.27 февраля 2023 года в ДК Родина г.Южно - Сахалинска состоялось торжественное мероприятие,???? посвященное Всемирному Дню НКО.На праздник съехались представители...',
+    },
+    {
+      id: 3,
+      img: News1,
+      gallery: [SocialImg1, SocialImg1, SocialImg1],
+      alt: 'test',
+      title: 'Опрос',
+      date: '02 МАРТА 2023',
+      text: 'Торжественное мероприятие, посвященное Всемирному Дню НКО, прошло в г.Южно - Сахалинске.27 февраля 2023 года в ДК Родина г.Южно - Сахалинска состоялось торжественное мероприятие,???? посвященное Всемирному Дню НКО.На праздник съехались представители...',
+    },
+    {
+      id: 4,
+      img: News1,
+      gallery: [SocialImg1, SocialImg1, SocialImg1],
+      alt: 'test',
+      title: 'Опрос',
+      date: '02 МАРТА 2023',
+      text: 'Торжественное мероприятие, посвященное Всемирному Дню НКО, прошло в г.Южно - Сахалинске.27 февраля 2023 года в ДК Родина г.Южно - Сахалинска состоялось торжественное мероприятие,???? посвященное Всемирному Дню НКО.На праздник съехались представители...',
+    }
+  ]);
+
   return (
     <main>
       <Container>
@@ -98,14 +137,12 @@ export const SocialPage = () => {
           <Grid mt={2} container spacing={4}>
 
             {projects.map((item) => (
-              <Grid item xs={12} lg={6}>
+              <Grid key={item.id} item xs={12} lg={6}>
                 <CardSocial project={item} />
               </Grid>
             ))}
 
           </Grid>
-
-
         </Paper>
 
       </Container>
@@ -134,18 +171,18 @@ export const SocialPage = () => {
           </Grid>
 
           <Grid container spacing={4}>
-            <Grid item xs={12} md={3}>
-              <CardNews />
-            </Grid>
-            <Grid item xs={12} md={3}>
-              <CardNewsText />
-            </Grid>
-            <Grid item xs={12} md={3}>
-              <CardNews />
-            </Grid>
-            <Grid item xs={12} md={3}>
-              <CardNewsText />
-            </Grid>
+            {news.map((item, i) => {
+              if (i % 2 === 0) {
+                return <Grid key={item.id} item xs={12} md={3}>
+                  <CardNews props={item} />
+                </Grid>
+              } else {
+                return <Grid key={item.id} item xs={12} md={3}>
+                  <CardNewsText props={item} />
+                </Grid>
+              }
+            }
+            )}
           </Grid>
 
         </Container>

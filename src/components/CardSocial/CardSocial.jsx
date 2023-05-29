@@ -5,7 +5,6 @@ import { CardActionArea, CardMedia } from '@mui/material';
 import Box from '@mui/material/Box';
 
 import { useDispatch, useSelector } from 'react-redux';
-import { deleteItemFromCart, setItemInCart } from '../../redux/cart/reducer';
 import { setCurrentProject } from '../../redux/project/reducer';
 
 import SouthEastOutlinedIcon from '@mui/icons-material/SouthEastOutlined';
@@ -25,7 +24,7 @@ export const CardSocial = ({ project }) => {
 
   return (
 
-    <Card s>
+    <Card>
       <CardActionArea onClick={handleClick}>
 
         <Box

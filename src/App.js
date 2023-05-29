@@ -18,6 +18,10 @@ import { RulesPage } from './pages/rules-page/rules-page';
 import { SocialPage } from './pages/social-page/social-page';
 import { SocialItemPage } from './pages/social-item-page/social-item-page';
 import { ContactsPage } from './pages/contacts-page';
+import { LoginPage } from './pages/login/login';
+import { RegisterPage } from './pages/register-page/register-page';
+import { AdvancedSearchPage } from './pages/advanced-search-page/advanced-search-page';
+import { NewsPage } from './pages/news-page/news-page';
 
 const theme = createTheme({
   typography: {
@@ -58,6 +62,11 @@ function App() {
             <Route exact path="/social" element={<SocialPage />} />
             <Route exact path="/social-details/:id" element={<SocialItemPage />} />
             <Route exact path="/contacts" element={<ContactsPage />} />
+            <Route exact path="/login" element={<LoginPage />} />
+            <Route exact path="/register" element={<RegisterPage />} />
+            <Route exact path="/advanced_search" element={<AdvancedSearchPage />} />
+            <Route exact path="/news" element={<NewsPage />} />
+            <Route exact path="/news-details/:id" element={<NewsPage />} />
           </Routes>
           <Footer />
         </ThemeProvider>

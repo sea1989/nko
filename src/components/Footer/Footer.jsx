@@ -37,10 +37,10 @@ export const Footer = () => {
               mb: 2,
             }} />
 
-            <Link className='link__footer'>
+            <Link to='/register' className='link__footer'>
               Бесплатная регистрация
             </Link>
-            <Link className='link__footer'>
+            <Link to='/login' className='link__footer'>
               Вход в личный кабинет
             </Link>
             <Link className='link__footer'>
@@ -62,7 +62,7 @@ export const Footer = () => {
             <Link to='/rules' className='link__footer'>
               Правила
             </Link>
-            <Link className='link__footer'>
+            <Link to='/advanced_search' className='link__footer'>
               Расширенный поиск
             </Link>
 
